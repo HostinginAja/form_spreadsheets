@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bungkus">
+   <div class="bungkus-dalem">
+    <center>
+        <h3 class="judul">Masukan Pesan Anda</h2>
+        <form action="" class="form1" name="form-eksperimen">
+            <div class="form-bungkus">
+                <label for="" class="label-form">Nama</label>
+                <input type="text" name="nama" class="form-pendek" id="" placeholder="Masukan Nama Anda"></div>
+    
+            <div class="form-bungkus">
+            <label for="" class="label-form">Email</label>
+            <input type="email" name="email" class="form-pendek" id="" placeholder="Masukan Email Anda"></div>
+    
+            <div class="form-bungkus">
+            <label for="" class="label-form">Pesan</label>
+            <textarea type="text" name="pesan" class="form-panjang" id="" placeholder="Masukan Pesan Anda"></textarea></div>
+
+                
+        <button type="submit" value="send" class="button btn-kirim">Kirim Pesan</button>
+
+        <button class="button btn-loading d-none"><span class="loader"></span></button>
+    </center>
+        </form>
+   </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwxhzgHTeKwtllO0C9S_ULlRFRnM6MyXwJNHwmnDhVhbxKeasDUw2MXsVedmS738tM61g/exec';
+    const form = document.forms['form-eksperimen'];
+    const btnloading = document.querySelector('.btn-loading');
+    const btnkirim = document.querySelector('.btn-kirim');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btnloading.classList.toggle('d-none');
+        btnkirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            
+        btnloading.classList.toggle('d-none');
+        btnkirim.classList.toggle('d-none');
+        form.reset();
+            Swal.fire(
+            'Terimakasih!',
+            'Pesan anda sudah kami terima.',
+            'success'
+            )
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+      </script>
+
+</body>
+</html>

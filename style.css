@@ -1,0 +1,200 @@
+/* CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CODINGAN CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+
+
+body{
+    background-color: #0b111e;
+    font-family: 'Poppins', sans-serif;
+}
+.bungkus{
+    margin: auto;
+    width: 600px;
+    margin-top: 70px;
+}
+
+.bungkus-dalem{
+    padding: 25px;
+}
+
+.judul{
+    font-size: 26px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 570;
+    color: #fff;
+}
+
+.form1{
+   margin: 20px 20px 20px 20px;
+   padding: 15px 0 10px 0;
+}
+
+.form1 .form-bungkus{
+    position: relative;
+    margin-bottom: 31px;
+}
+
+.form1 input{
+    width: 70%;
+    height: 50px;
+    border-radius: 9px;
+    border: 2px solid #73777e;
+    background: none;
+    z-index: 1;
+    color: white;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.form1 textarea{
+    width: 70%;
+    height: 30px;
+    border-radius: 9px;
+    border: 2px solid #73777e;
+    background: none;
+    z-index: 1;
+    color: white;
+    padding: 10px;
+    resize: none;
+    height: 150px;
+    box-sizing: border-box;
+}
+
+.form1 .label-form{
+    position: absolute;
+    top: -13px;
+    left: 90px;
+    color: #fff;
+    background-color: #0b111e;
+    z-index: 10;
+    padding: 5px;
+}
+
+.form1 input::placeholder{
+    color: #81868e;
+    padding: 10px;
+}
+
+
+.form1 textarea::placeholder{
+    color: #81868e;
+    padding: 10px;
+}
+
+
+
+.button{
+    height:55px;
+    width: 140px;
+    border-radius: 9px;
+    background: none;
+    border: 2px solid #81868e;
+    color: #101625;
+    background-color: #a092e5;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.button:hover{
+    background-color: #9a8ddb;
+    color: #0e1421;
+}
+
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent #0b111e #0b111e;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+      
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .d-none{
+    display: none;
+  }
